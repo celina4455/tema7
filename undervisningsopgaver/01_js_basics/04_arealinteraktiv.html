@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <p>Længde:</p>
+    <input type="number" id="lenght">
+    <p>Bredde:</p>
+    <input type="number" id="width">
+
+    <button>Udregn areal</button>
+    <script>
+        document.querySelector("button").addEventListener("click", knapKlik);
+
+        function knapKlik() {
+            let areal = document.querySelector("#lenght").value * document.querySelector("#width").value;
+            console.log(`Arealet er ${areal}!`)
+        }
+
+    </script>
+</body>
+
+</html>

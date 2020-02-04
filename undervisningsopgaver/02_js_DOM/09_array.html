@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #display {
+            width: 200px;
+            height: 200px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="display"></div>
+
+
+
+
+    <script>
+        let musik = ["Happiness is a butterfly", "Riverside", "Solkongen", "Higher", "Dancing on my own", "Forever Young", "Berlin", "Rocket Brothers", "Lad dine hænder vandre", "Lullabies"];
+        musik.forEach(sang => {
+
+            document.querySelector("#display").innerHTML += `${sang} <br>`;
+        })
+
+    </script>
+</body>
+
+</html>

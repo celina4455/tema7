@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<p>Hvor mange timer er der på et døgn?</p>
+<input type="number" id="spg1">
+<button id="knap1">Tjek svar</button>
+
+<p>Hvor mange dage er der på en uge?</p>
+<input type="number" id="spg2">
+<button id="knap2">Tjek svar</button>
+
+<p>Hvor mange uger er der på et år?</p>
+<input type="number" id="spg3">
+<button id="knap3">Tjek svar</button>
+
+<p>Hvor mange måneder er der på et år?</p>
+<input type="number" id="spg4">
+<button id="knap4">Tjek svar</button>
+
+<p>Hvor mange år er der på et årti?</p>
+<input type="number" id="spg5">
+<button id="knap5">Tjek svar</button>
+
+<!--    /************ input type er number i stedet for text - så kan man ikke skrive tekst ********/ -->
+
+
+<body>
+    <script>
+        document.querySelector("#knap1").addEventListener("click", knap1Klik);
+
+        let point = 0;
+        let spg1 = document.querySelector("#spg1").value;
+
+        function knap1Klik() {
+            if (spg1 = 24) {
+                console.log("Rigtigt");
+                point++;
+                console.log(point);
+            } else if (spg1 >= 25 || spg1 <= 23) {
+                console.log("Forkert");
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

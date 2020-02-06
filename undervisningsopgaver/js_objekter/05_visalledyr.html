@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <article></article>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            const grisURL = `http://mabe-kea.dk/E19/pics/pig.png`;
+
+
+
+
+            let dyr = [{
+                    "navn": "Gris",
+                    "type": "Pattedyr",
+                    "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+                    "levested": "Svinefarme"
+                },
+                {
+                    "navn": "Frø",
+                    "type": "Amfibie",
+                    "billede": "http://mabe-kea.dk/E19/pics/frog.png",
+                    "levested": "Søer"
+                },
+                {
+                    "navn": "Ræv",
+                    "type": "Pattedyr",
+                    "billede": "http://mabe-kea.dk/E19/pics/fox.png",
+                    "levested": "Skoven"
+                },
+                {
+                    "navn": "Sild",
+                    "type": "Fisk",
+                    "billede": "http://mabe-kea.dk/E19/pics/sild.png",
+                    "levested": "Havet"
+                },
+                {
+                    "navn": "Krokodille",
+                    "type": "Krybdyr",
+                    "billede": "http://mabe-kea.dk/E19/pics/kroko.png",
+                    "levested": "Floder"
+                }
+            ];
+
+            console.log(dyr);
+
+            document.querySelector("article").innerHTML = `${dyr[0].navn}, ${dyr[0].type}, ${dyr[0].levested}`;
+            document.querySelector("article").innerHTML += `<br>${dyr[1].navn}, ${dyr[1].type}, ${dyr[1].levested}`;
+            document.querySelector("article").innerHTML += `<br>${dyr[2].navn}, ${dyr[2].type}, ${dyr[2].levested}`;
+            document.querySelector("article").innerHTML += `<br>${dyr[3].navn}, ${dyr[3].type}, ${dyr[3].levested}`;
+            document.querySelector("article").innerHTML += `<br>${dyr[4].navn}, ${dyr[4].type}, ${dyr[4].levested}`;
+
+
+        }
+
+    </script>
+</body>
+
+</html>

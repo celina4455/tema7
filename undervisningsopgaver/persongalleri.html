@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persongalleri</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 10px;
+            background: #ececec;
+
+        }
+
+        article {
+            border: 1px solid #000;
+            padding: 10px;
+        }
+
+
+
+        @media screen and (min-width:768px) {}
+    </style>
+</head>
+
+<body>
+
+
+    <section class="container"></section>
+
+
+
+    <template>
+
+        <article class="personer">
+            <h2></h2>
+            <img src="" alt="">
+            <p class="alder"></p>
+            <p class="job"></p>
+            <p class="hobby"></p>
+
+        </article>
+
+    </template>
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        const endpoint = "https://spreadsheets.google.com/feeds/list/1XWWbfWszD7f4jHqp51V_oT3pkHuR-ceEUw4YtrvK7F0/od6/public/values?alt=json";
+
+        let personer = [];
+
+
+        function start() {
+            hentData();
+        }
+
+        async function hentData() {
+            const response = await fetch(endpoint);
+            console.log(response);
+            personer = await response.json();
+            visPersoner();
+
+
+        }
+
+        function visPersoner() {
+
+            const container = document.querySelector(".container");
+            const personerTemplate = document.querySelector("template");
+
+            personer.feed.entry.forEach(hverPerson => {
+                let klon = personerTemplate.cloneNode(true).content;
+                klon.querySelector("h2").textContent = hverPerson.gsx$navn.$t;
+                klon.querySelector("img").src = hverPerson.gsx$billede.$t;
+                klon.querySelector(".alder").textContent = hverPerson.gsx$alder.$t;
+                klon.querySelector(".job").textContent = hverPerson.gsx$job.$t;
+                klon.querySelector(".hobby").textContent = hverPerson.gsx$hobby.$t;
+                container.appendChild(klon);
+            })
+
+
+
+        }
+    </script>
+</body></html>
